@@ -2,30 +2,13 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Golden Class - Салон красоты | Шымкент</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
   
   <style>
-   
-a:link {
-  color: #eecac5; 
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-
-a:visited {
-  color: #4a3e47; 
-}
-
-
-a:hover {
-  color: #ffffff;
-  text-shadow: 0 0 8px rgba(238, 202, 197, 0.6); 
-}
     :root {
       --bg-main: #141113;
       --bg-card: #1f1b1e;
@@ -45,18 +28,32 @@ a:hover {
       padding: 0;
     }
 
+    html, body {
+      width: 100%;
+      overflow-x: hidden;
+    }
+
     body {
       background-color: var(--bg-main);
       color: var(--text-main);
       font-family: var(--font-title);
       line-height: 1.5;
-      overflow-x: hidden;
-      padding-bottom: 80px;
+      padding-bottom: 90px;
     }
 
-    a {
-      color: inherit;
+    a:link {
+      color: var(--accent-pink);
       text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    a:visited {
+      color: #4a3e47;
+    }
+
+    a:hover {
+      color: #ffffff;
+      text-shadow: 0 0 8px rgba(238, 202, 197, 0.6);
     }
 
     button {
@@ -66,9 +63,10 @@ a:hover {
     }
 
     .container {
+      width: 100%;
       max-width: 1240px;
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 20px;
     }
 
     /* HEADER */
@@ -76,57 +74,62 @@ a:hover {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(20, 17, 19, 0.9);
+      background: rgba(20, 17, 19, 0.95);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border-color);
+      width: 100%;
     }
 
     .header-container {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      height: 80px;
+      min-height: 70px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      gap: 15px;
     }
 
     .logo-box {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
+      flex-shrink: 0;
     }
 
     .logo-icon {
-      width: 38px;
-      height: 38px;
+      width: 32px;
+      height: 32px;
       color: var(--accent-pink);
     }
 
     .logo-text h1 {
-      font-size: 1.25rem;
+      font-size: 1.1rem;
       font-weight: 800;
-      letter-spacing: 2px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
       line-height: 1;
     }
 
     .logo-text span {
-      font-size: 0.65rem;
+      font-size: 0.6rem;
       color: var(--text-muted);
-      letter-spacing: 3px;
+      letter-spacing: 2px;
       text-transform: uppercase;
     }
 
     nav {
       display: flex;
-      gap: 32px;
+      gap: 20px;
+      align-items: center;
     }
 
-    nav a {
-      font-size: 0.85rem;
+    nav a:link, nav a:visited {
+      font-size: 0.8rem;
       font-weight: 600;
-      letter-spacing: 1.5px;
+      letter-spacing: 1px;
       text-transform: uppercase;
       color: var(--text-muted);
-      transition: color 0.3s;
     }
 
     nav a:hover {
@@ -137,423 +140,247 @@ a:hover {
       background-color: var(--accent-pink);
       color: #1a1214;
       font-weight: 700;
-      font-size: 0.85rem;
-      letter-spacing: 1px;
+      font-size: 0.8rem;
+      letter-spacing: 0.5px;
       text-transform: uppercase;
-      padding: 12px 28px;
+      padding: 10px 20px;
       border-radius: 50px;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(238, 202, 197, 0.2);
+      white-space: nowrap;
+      flex-shrink: 0;
     }
 
     .btn-pink:hover {
       background-color: var(--accent-pink-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(238, 202, 197, 0.35);
     }
 
-    /* HERO SECTION */
+    /* HERO */
     .hero {
-      padding: 60px 0 100px;
-      position: relative;
+      padding: 40px 0 60px;
     }
 
     .hero-grid {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
-      gap: 50px;
+      gap: 40px;
       align-items: center;
     }
 
     .hero-tag {
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       color: var(--accent-pink);
-      letter-spacing: 3px;
+      letter-spacing: 2px;
       text-transform: uppercase;
       font-weight: 600;
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .hero-tag::before {
-      content: '';
-      width: 24px;
-      height: 1px;
-      background: var(--accent-pink);
+      margin-bottom: 12px;
     }
 
     .hero h2 {
-      font-size: 3.2rem;
+      font-size: 2.5rem;
       font-weight: 900;
       text-transform: uppercase;
-      line-height: 1.05;
-      letter-spacing: -0.5px;
-      margin-bottom: 24px;
+      line-height: 1.1;
+      margin-bottom: 20px;
     }
 
     .hero p {
       color: var(--text-muted);
-      font-size: 1.1rem;
-      max-width: 500px;
-      margin-bottom: 36px;
-      font-weight: 300;
-    }
-
-    .hero-action {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      align-items: flex-start;
-    }
-
-    .discount-badge {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.9rem;
-      color: var(--accent-pink);
-      font-weight: 500;
+      font-size: 1rem;
+      margin-bottom: 28px;
     }
 
     .rating-badge {
-      margin-top: 30px;
+      margin-top: 24px;
       display: inline-flex;
       align-items: center;
-      gap: 16px;
+      gap: 14px;
       background: rgba(255, 255, 255, 0.04);
       border: 1px solid var(--border-color);
-      padding: 12px 20px;
-      border-radius: 16px;
+      padding: 10px 16px;
+      border-radius: 14px;
     }
 
     .rating-score {
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       font-weight: 800;
       color: #fff;
-      display: flex;
-      align-items: center;
-      gap: 4px;
     }
 
-    .rating-score span {
-      color: var(--accent-gold);
-    }
-
-    .rating-info {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      line-height: 1.3;
-    }
+    .rating-score span { color: var(--accent-gold); }
 
     .hero-media-wrapper {
       position: relative;
-      border-radius: 30px;
+      border-radius: 24px;
       overflow: hidden;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-      border: 1px solid rgba(238, 202, 197, 0.2);
+      border: 1px solid var(--border-color);
+      width: 100%;
     }
 
     .hero-video {
       width: 100%;
-      height: 540px;
+      max-height: 480px;
       object-fit: cover;
       display: block;
     }
 
-    .video-overlay-badge {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      background: rgba(20, 17, 19, 0.75);
-      backdrop-filter: blur(10px);
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      border: 1px solid rgba(255,255,255,0.1);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .live-dot {
-      width: 8px;
-      height: 8px;
-      background: #ff4757;
-      border-radius: 50%;
-      animation: pulse 1.5s infinite;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 71, 87, 0.7); }
-      70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(255, 71, 87, 0); }
-      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 71, 87, 0); }
-    }
-
-    /* SECTION COMMON */
-    section {
-      padding: 90px 0;
-    }
-
-    .section-header {
-      margin-bottom: 50px;
-    }
-
-    .section-header h3 {
-      font-size: 2.8rem;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: -0.5px;
-    }
-
-    /* AWARDS BAR */
+    /* AWARDS */
     .awards-bar {
       display: flex;
-      gap: 16px;
+      gap: 12px;
       overflow-x: auto;
       padding-bottom: 10px;
-      margin-bottom: 60px;
+      margin-bottom: 40px;
+      -webkit-overflow-scrolling: touch;
     }
 
     .award-card {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
-      padding: 16px 24px;
-      border-radius: 16px;
+      padding: 14px 20px;
+      border-radius: 14px;
       display: flex;
       align-items: center;
-      gap: 14px;
-      min-width: 220px;
+      gap: 10px;
+      min-width: 200px;
       flex-shrink: 0;
     }
 
-    .award-card svg {
-      width: 28px;
-      height: 28px;
-      color: var(--accent-gold);
-      flex-shrink: 0;
-    }
-
-    .award-card div {
-      font-size: 0.85rem;
-      font-weight: 700;
-      line-height: 1.2;
-    }
-
-    .award-card span {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      font-weight: 400;
-    }
-
-    /* SERVICES GRID */
+    /* SERVICES */
     .services-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 20px;
+      gap: 16px;
     }
 
     .service-card-main {
-      background: linear-gradient(180deg, rgba(31, 27, 30, 0.6) 0%, rgba(31, 27, 30, 0.95) 100%), 
+      background: linear-gradient(180deg, rgba(31, 27, 30, 0.7) 0%, rgba(31, 27, 30, 0.95) 100%), 
                   url('https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=80') center/cover;
-      border-radius: 24px;
-      padding: 40px;
+      border-radius: 20px;
+      padding: 30px 24px;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      min-height: 380px;
+      min-height: 300px;
       border: 1px solid var(--border-color);
-    }
-
-    .service-card-main h4 {
-      font-size: 1.6rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-
-    .service-card-main p {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      margin-bottom: 24px;
-    }
-
-    .btn-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: #fff;
-      font-weight: 700;
-      font-size: 0.9rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
     }
 
     .services-subgrid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 20px;
+      gap: 16px;
     }
 
     .service-box {
       background: var(--accent-pink);
       color: #1a1214;
-      border-radius: 24px;
-      padding: 30px 24px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: transform 0.3s;
-    }
-
-    .service-box:hover {
-      transform: translateY(-5px);
-    }
-
-    .service-num {
-      font-size: 0.9rem;
-      font-weight: 800;
-      opacity: 0.6;
+      border-radius: 20px;
+      padding: 20px 16px;
     }
 
     .service-box h5 {
-      font-size: 1.2rem;
+      font-size: 1.05rem;
       font-weight: 800;
       text-transform: uppercase;
-      margin: 20px 0 8px;
+      margin: 12px 0 6px;
     }
 
     .service-box p {
-      font-size: 0.82rem;
-      opacity: 0.8;
-      line-height: 1.4;
+      font-size: 0.78rem;
+      opacity: 0.85;
     }
 
-    /* COMBO BANNER */
+    /* COMBO */
     .combo-banner {
       background: linear-gradient(135deg, #2a2227 0%, #1a1417 100%);
       border: 2px solid var(--accent-pink);
-      border-radius: 30px;
-      padding: 40px 50px;
-      margin-top: 40px;
+      border-radius: 24px;
+      padding: 30px;
+      margin-top: 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 20px;
     }
 
     .combo-info h4 {
-      font-size: 2rem;
+      font-size: 1.6rem;
       font-weight: 900;
-      text-transform: uppercase;
       color: var(--accent-pink);
-      margin-bottom: 8px;
-    }
-
-    .combo-info p {
-      color: var(--text-muted);
-      font-size: 1.05rem;
+      text-transform: uppercase;
     }
 
     .combo-price-val {
-      font-size: 2.3rem;
+      font-size: 1.8rem;
       font-weight: 900;
       color: #fff;
-      margin-bottom: 12px;
-      text-align: right;
+      margin-bottom: 8px;
     }
 
     /* ADVANTAGES */
     .advantages-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+      gap: 16px;
     }
 
     .adv-card {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
-      border-radius: 20px;
-      padding: 30px 24px;
+      border-radius: 16px;
+      padding: 20px;
     }
 
-    .adv-card .num {
-      color: var(--accent-pink);
-      font-weight: 800;
-      font-size: 0.9rem;
-      margin-bottom: 16px;
-    }
-
-    .adv-card h5 {
-      font-size: 1.05rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-
-    .adv-card p {
-      color: var(--text-muted);
-      font-size: 0.85rem;
-    }
-
-    /* PRICING WITH INTERACTIVE SELECTION */
+    /* PRICING */
     .price-tabs {
       display: flex;
-      gap: 10px;
-      margin-bottom: 30px;
-      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      -webkit-overflow-scrolling: touch;
     }
 
     .tab-btn {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
       color: var(--text-muted);
-      padding: 10px 20px;
+      padding: 8px 16px;
       border-radius: 30px;
-      font-weight: 600;
-      font-size: 0.85rem;
-      transition: all 0.3s;
+      font-size: 0.8rem;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
 
-    .tab-btn.active, .tab-btn:hover {
+    .tab-btn.active {
       background: var(--accent-pink);
       color: #1a1214;
-      border-color: var(--accent-pink);
     }
 
     .price-list {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
-      border-radius: 24px;
-      padding: 30px;
+      border-radius: 20px;
+      padding: 20px;
     }
 
     .price-item {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 14px 0;
+      padding: 12px 0;
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-      gap: 16px;
-    }
-
-    .price-item:last-child {
-      border-bottom: none;
+      gap: 12px;
     }
 
     .price-name {
-      font-weight: 500;
-      font-size: 0.95rem;
+      font-size: 0.88rem;
       flex: 1;
     }
 
     .price-val {
-      font-weight: 700;
+      font-size: 0.9rem;
       color: var(--accent-pink);
-      font-size: 1rem;
+      font-weight: 700;
       text-align: right;
     }
 
@@ -561,97 +388,68 @@ a:hover {
       background: rgba(238, 202, 197, 0.1);
       border: 1px solid var(--accent-pink);
       color: var(--accent-pink);
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 0.78rem;
+      padding: 5px 10px;
+      border-radius: 16px;
+      font-size: 0.75rem;
       font-weight: 700;
-      transition: all 0.2s ease;
       white-space: nowrap;
     }
 
-    .btn-add-service:hover, .btn-add-service.added {
+    .btn-add-service.added {
       background: var(--accent-pink);
       color: #1a1214;
     }
 
-    /* FLOATING CART BAR */
+    /* CART BAR */
     .cart-bar {
       position: fixed;
-      bottom: 24px;
+      bottom: 16px;
       left: 50%;
-      transform: translateX(-50%) translateY(120%);
+      transform: translateX(-50%) translateY(150%);
       background: rgba(31, 27, 30, 0.95);
       backdrop-filter: blur(16px);
-      border: 2px solid var(--accent-pink);
-      border-radius: 50px;
-      padding: 12px 28px;
+      border: 1.5px solid var(--accent-pink);
+      border-radius: 40px;
+      padding: 10px 20px;
       display: flex;
       align-items: center;
-      gap: 24px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+      justify-content: space-between;
+      width: 90%;
+      max-width: 440px;
       z-index: 99;
-      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transition: transform 0.3s ease;
     }
 
     .cart-bar.active {
       transform: translateX(-50%) translateY(0);
     }
 
-    .cart-info {
-      font-size: 0.88rem;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
     .cart-count {
       background: var(--accent-pink);
       color: #1a1214;
       font-weight: 800;
-      width: 24px;
-      height: 24px;
+      width: 22px;
+      height: 22px;
       border-radius: 50%;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       font-size: 0.75rem;
+      margin-right: 6px;
     }
 
     /* FOOTER */
     footer {
       background: #0d0b0c;
-      padding: 60px 0 30px;
+      padding: 40px 0 20px;
       border-top: 1px solid var(--border-color);
     }
 
     .footer-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr) 1.2fr;
-      gap: 40px;
-      margin-bottom: 50px;
-    }
-
-    .footer-col h6 {
-      font-size: 0.8rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 16px;
-    }
-
-    .footer-col p {
-      font-size: 0.95rem;
-      font-weight: 500;
-      line-height: 1.6;
-    }
-
-    .copyright {
-      display: flex;
-      justify-content: space-between;
-      padding-top: 30px;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-      font-size: 0.75rem;
-      color: var(--text-muted);
+      grid-template-columns: repeat(3, 1fr) 1fr;
+      gap: 24px;
+      margin-bottom: 30px;
     }
 
     /* MODAL */
@@ -664,82 +462,137 @@ a:hover {
       z-index: 1000;
       justify-content: center;
       align-items: center;
+      padding: 16px;
     }
 
-    .modal.active {
-      display: flex;
-    }
+    .modal.active { display: flex; }
 
     .modal-content {
       background: var(--bg-card);
       border: 1px solid var(--accent-pink);
-      border-radius: 24px;
-      padding: 40px;
+      border-radius: 20px;
+      padding: 24px;
       width: 100%;
-      max-width: 500px;
+      max-width: 440px;
       position: relative;
     }
 
     .close-btn {
       position: absolute;
-      top: 20px;
-      right: 20px;
+      top: 16px; right: 16px;
       background: none;
       color: #fff;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
     }
 
     .modal form {
       display: flex;
       flex-direction: column;
-      gap: 16px;
-      margin-top: 20px;
+      gap: 12px;
+      margin-top: 16px;
     }
 
     .modal input {
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid var(--border-color);
-      padding: 14px 18px;
-      border-radius: 12px;
+      padding: 12px 14px;
+      border-radius: 10px;
       color: #fff;
-      font-family: inherit;
     }
 
     .selected-services-box {
       background: rgba(0,0,0,0.3);
       border: 1px dashed var(--border-color);
-      border-radius: 12px;
-      padding: 16px;
-      max-height: 180px;
+      border-radius: 10px;
+      padding: 12px;
+      max-height: 150px;
       overflow-y: auto;
     }
 
-    .selected-service-chip {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.85rem;
-      padding: 6px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-    }
+    
+    @media (max-width: 768px) {
+      .header-container {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 8px 16px;
+      }
 
-    .selected-service-chip:last-child {
-      border-bottom: none;
-    }
+      nav {
+        order: 3;
+        width: 100%;
+        overflow-x: auto;
+        padding-top: 6px;
+        gap: 14px;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
 
-    @media (max-width: 992px) {
-      .hero-grid { grid-template-columns: 1fr; }
-      .services-grid { grid-template-columns: 1fr; }
-      .advantages-grid { grid-template-columns: 1fr 1fr; }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
-      .combo-banner { flex-direction: column; text-align: center; gap: 24px; }
-      .combo-price-val { text-align: center; }
-      .cart-bar { width: 90%; justify-content: space-between; }
+      nav a:link, nav a:visited {
+        font-size: 0.72rem;
+      }
+
+      .hero {
+        padding: 24px 0 40px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .hero h2 {
+        font-size: 1.8rem;
+      }
+
+      .hero-video {
+        height: 340px;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .services-subgrid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .combo-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 24px 16px;
+      }
+
+      .combo-price-val {
+        text-align: center;
+      }
+
+      .advantages-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .footer-col {
+        text-align: left !important;
+      }
+
+      .price-item {
+        flex-wrap: wrap;
+      }
+
+      .price-name {
+        width: 100%;
+        margin-bottom: 4px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
+ 
   <header>
     <div class="container header-container">
       <div class="logo-box">
@@ -748,134 +601,100 @@ a:hover {
         </svg>
         <div class="logo-text">
           <h1>Golden Class</h1>
-          <span>Салон красоты • </span>
+          <span>Салон красоты</span>
         </div>
       </div>
+
+      <button class="btn-pink" onclick="openModal()">Записаться</button>
+
       <nav>
         <a href="#services">Услуги</a>
         <a href="#advantages">Преимущества</a>
         <a href="#prices">Прайс</a>
         <a href="#contacts">Контакты</a>
       </nav>
-      <button class="btn-pink" onclick="openModal()">Записаться</button>
     </div>
   </header>
 
-  <!-- HERO -->
+  
   <section class="hero">
-    <div class="container hero-grid">
+   
       <div>
-        <div class="hero-tag">- Твоя красота - наше вдохновение</div>
+        <div class="hero-tag">Твоя красота - наше вдохновение</div>
         <h2>Красота, которая подчёркивает твою уникальность</h2>
         <p>Премиальный салон красоты в Шымкенте. Профессиональный уход, безупречный сервис и полный спектр бьюти-услуг.</p>
         
-        <div class="hero-action">
-          <button class="btn-pink" onclick="openModal()">Записаться на процедуру</button>
-          <div class="discount-badge">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12v10H4V12"/><path d="M2 7h20v5H2z"/><path d="M12 22V7"/></svg>
-            Скидка 10% на первое посещение
-          </div>
+        <button class="btn-pink" onclick="openModal()">Записаться на процедуру</button>
+
+        <div style="margin-top: 14px; font-size: 0.85rem; color: var(--accent-pink);">
+          ✦ Скидка 10% на первое посещение
         </div>
 
         <div class="rating-badge">
           <div class="rating-score">4.9 <span>★</span></div>
-          <div class="rating-info">
-            <strong>Номинант 2026</strong><br>
-            Лучший салон красоты (2GIS Awards)
+          <div style="font-size: 0.75rem; color: var(--text-muted);">
+            <strong>Номинант 2026</strong><br>2GIS Awards
           </div>
         </div>
       </div>
 
-      <!-- VIDEO BANNER -->
       <div class="hero-media-wrapper">
-        <div class="video-overlay-badge">
-          <span class="live-dot"></span>
-          Трансформация макияжа & укладки
-        </div>
         <video class="hero-video" autoplay loop muted playsinline>
           <source src="AQOQ5mW7MZsMwHWErz2u6XFhXNC6qMz34HVAIrXC85cdxhFNyD02FlsJ7ufkN3VtGgTkEWxKM.mp4" type="video/mp4">
-          Ваш браузер не поддерживает видео.
         </video>
       </div>
     </div>
   </section>
 
-  <!-- AWARDS -->
+ 
   <div class="container">
     <div class="awards-bar">
-      <div class="award-card">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        <div>Номинант 2026<span>2GIS Awards</span></div>
-      </div>
-      <div class="award-card">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        <div>Лучший салон 2025<span>2GIS Awards</span></div>
-      </div>
-      <div class="award-card">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        <div>Лучший салон 2023<span>2GIS Awards</span></div>
-      </div>
-      <div class="award-card">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        <div>Премия 2ГИС 2019<span>Победитель</span></div>
-      </div>
+      <div class="award-card"><div>Номинант 2026<span> • 2GIS Awards</span></div></div>
+      <div class="award-card"><div>Победитель 2025<span> • 2GIS Awards</span></div></div>
+      <div class="award-card"><div>Лучший салон 2023<span> • 2GIS Awards</span></div></div>
     </div>
   </div>
 
-  <!-- SERVICES -->
+  
   <section id="services">
     <div class="container">
-      <div class="section-header">
-        <h3>Наши Услуги</h3>
-      </div>
+      <h3 style="font-size: 2rem; margin-bottom: 20px; text-transform: uppercase;">Наши Услуги</h3>
       
       <div class="services-grid">
         <div class="service-card-main">
-          <h4>Полный комплекс ухода</h4>
-          <p>Парикмахерский зал, ногтевой сервис, наращивание и ламинирование ресниц, депиляция и макияж.</p>
-          <a href="#prices" class="btn-link">
-            Смотреть весь прайс 
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
+          <h4 style="font-size: 1.4rem; margin-bottom: 8px;">Полный комплекс ухода</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">Парикмахерский зал, ногти, ресницы, депиляция и макияж.</p>
+          <a href="#prices" style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase;">Смотреть весь прайс →</a>
         </div>
 
         <div class="services-subgrid">
           <div class="service-box">
-            <div class="service-num">1/</div>
-            <div>
-              <h5>Ресницы и Брови</h5>
-              <p>Классика, 2D-10D, ламинирование, СПА бровей и нить</p>
-            </div>
+            <div style="font-size: 0.75rem; opacity: 0.6;">1/</div>
+            <h5>Ресницы & Брови</h5>
+            <p>2D-10D, ламинирование, СПА</p>
           </div>
           <div class="service-box">
-            <div class="service-num">2/</div>
-            <div>
-              <h5>Ногтевой Сервис</h5>
-              <p>Top & VIP Мастерам: гелевое покрытие, Smart педикюр, дизайн</p>
-            </div>
+            <div style="font-size: 0.75rem; opacity: 0.6;">2/</div>
+            <h5>Ногтевой Сервис</h5>
+            <p>Top & VIP Мастера, Smart педикюр</p>
           </div>
           <div class="service-box">
-            <div class="service-num">3/</div>
-            <div>
-              <h5>Студия Волос</h5>
-              <p>Стрижки, локоны, сложное окрашивание, ботокс, кератин</p>
-            </div>
+            <div style="font-size: 0.75rem; opacity: 0.6;">3/</div>
+            <h5>Студия Волос</h5>
+            <p>Стрижки, окрашивание, ботокс</p>
           </div>
           <div class="service-box">
-            <div class="service-num">4/</div>
-            <div>
-              <h5>Депиляция & Макияж</h5>
-              <p>Шугаринг, восковая депиляция, макияж и причёски на выезд</p>
-            </div>
+            <div style="font-size: 0.75rem; opacity: 0.6;">4/</div>
+            <h5>Депиляция & Макияж</h5>
+            <p>Шугаринг, воск, выезд мастера</p>
           </div>
         </div>
       </div>
 
-      <!-- COMBO OFFER -->
       <div class="combo-banner">
         <div class="combo-info">
           <h4>Бьюти-комбо 🔥</h4>
-          <p>Ресницы + Ногти + Укладка волос в один визит</p>
+          <p style="font-size: 0.9rem; color: var(--text-muted);">Ресницы + Ногти + Укладка волос</p>
         </div>
         <div>
           <div class="combo-price-val">26.000 ₸</div>
@@ -885,113 +704,105 @@ a:hover {
     </div>
   </section>
 
-  <!-- ADVANTAGES -->
-  <section id="advantages" style="background: rgba(255,255,255,0.01);">
+
+  <section id="advantages">
     <div class="container">
-      <div class="section-header">
-        <h3>Преимущества</h3>
-      </div>
+      <h3 style="font-size: 2rem; margin-bottom: 20px; text-transform: uppercase;">Преимущества</h3>
       <div class="advantages-grid">
         <div class="adv-card">
-          <div class="num">1/</div>
-          <h5>Опытные специалисты</h5>
-          <p>Top и VIP мастера с высоким уровнем квалификации.</p>
+          <div style="color: var(--accent-pink); font-weight: 800; font-size: 0.8rem;">1/</div>
+          <h5 style="margin: 8px 0 4px; font-size: 0.95rem;">Опытные мастера</h5>
+          <p style="font-size: 0.8rem; color: var(--text-muted);">Top и VIP специалисты</p>
         </div>
         <div class="adv-card">
-          <div class="num">2/</div>
-          <h5>Индивидуальный подход</h5>
-          <p>Подбираем процедуры под ваши персональные запросы.</p>
+          <div style="color: var(--accent-pink); font-weight: 800; font-size: 0.8rem;">2/</div>
+          <h5 style="margin: 8px 0 4px; font-size: 0.95rem;">Индивидуально</h5>
+          <p style="font-size: 0.8rem; color: var(--text-muted);">Подход к каждому клиенту</p>
         </div>
         <div class="adv-card">
-          <div class="num">3/</div>
-          <h5>Премиальные материалы</h5>
-          <p>Используем бренды L'Oréal, La Biosthetique, Hyaluron и сертифицированные составы.</p>
+          <div style="color: var(--accent-pink); font-weight: 800; font-size: 0.8rem;">3/</div>
+          <h5 style="margin: 8px 0 4px; font-size: 0.95rem;">Премиум бренды</h5>
+          <p style="font-size: 0.8rem; color: var(--text-muted);">L'Oréal, La Biosthetique</p>
         </div>
         <div class="adv-card">
-          <div class="num">4/</div>
-          <h5>Комфорт и сервис</h5>
-          <p>Уютная атмосфера, выезд мастера на дом, Wi-Fi и внимательный сервис.</p>
+          <div style="color: var(--accent-pink); font-weight: 800; font-size: 0.8rem;">4/</div>
+          <h5 style="margin: 8px 0 4px; font-size: 0.95rem;">Выезд на дом</h5>
+          <p style="font-size: 0.8rem; color: var(--text-muted);">Удобно для важных событий</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PRICING WITH INTERACTIVE ADDITION -->
+  
   <section id="prices">
     <div class="container">
-      <div class="section-header">
-        <h3>Официальный прайс-лист</h3>
-        <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 8px;">Выберите необходимые процедуры, чтобы мгновенно сформировать запись в WhatsApp</p>
-      </div>
+      <h3 style="font-size: 2rem; margin-bottom: 16px; text-transform: uppercase;">Официальный прайс-лист</h3>
 
       <div class="price-tabs">
-        <button class="tab-btn active" onclick="switchTab('hair')">Студия волос</button>
-        <button class="tab-btn" onclick="switchTab('coloring')">Окрашивание & Уход</button>
-        <button class="tab-btn" onclick="switchTab('nailsTop')">Ногти (Top Мастер)</button>
-        <button class="tab-btn" onclick="switchTab('nailsVip')">Ногти (VIP Мастер)</button>
-        <button class="tab-btn" onclick="switchTab('lashes')">Ресницы & Ламинирование</button>
+        <button class="tab-btn active" onclick="switchTab('hair')">Волосы</button>
+        <button class="tab-btn" onclick="switchTab('coloring')">Окрашивание</button>
+        <button class="tab-btn" onclick="switchTab('nailsTop')">Ногти Top</button>
+        <button class="tab-btn" onclick="switchTab('nailsVip')">Ногти VIP</button>
+        <button class="tab-btn" onclick="switchTab('lashes')">Ресницы</button>
         <button class="tab-btn" onclick="switchTab('brows')">Брови</button>
-        <button class="tab-btn" onclick="switchTab('depilation')">Шугаринг & Воск</button>
-        <button class="tab-btn" onclick="switchTab('makeup')">Макияж & Выезд</button>
+        <button class="tab-btn" onclick="switchTab('depilation')">Депиляция</button>
+        <button class="tab-btn" onclick="switchTab('makeup')">Макияж</button>
       </div>
 
-      <div class="price-list" id="price-content">
-        <!-- JS Dyn Content -->
-      </div>
+      <div class="price-list" id="price-content"></div>
     </div>
   </section>
 
-  <!-- FLOATING CART BAR -->
+  <!-- CART BAR -->
   <div class="cart-bar" id="cartBar">
-    <div class="cart-info">
+    <div style="font-size: 0.85rem; display: flex; align-items: center;">
       <span class="cart-count" id="cartCount">0</span>
-      <span>Выбрано процедур</span>
+      <span>Выбрано</span>
     </div>
     <button class="btn-pink" onclick="openModal()">Оформить запись</button>
   </div>
 
-  <!-- FOOTER / CONTACTS -->
+  <!-- FOOTER -->
   <footer id="contacts">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
-          <h6>Адрес в Шымкенте</h6>
-          <p>ул. Торекулова, 10<br>(Остановка: Улица Л.Толстого, 4 мин пешком)</p>
+          <h6 style="color: var(--text-muted); font-size: 0.75rem; margin-bottom: 8px;">АДРЕС</h6>
+          <p style="font-size: 0.9rem;">ул. Торекулова, 10<br>Шымкент</p>
         </div>
         <div class="footer-col">
-          <h6>Режим работы</h6>
-          <p>Ежедневно: 10:00 – 21:00<br>Без выходных</p>
+          <h6 style="color: var(--text-muted); font-size: 0.75rem; margin-bottom: 8px;">РЕЖИМ РАБОТЫ</h6>
+          <p style="font-size: 0.9rem;">Ежедневно: 10:00 – 21:00</p>
         </div>
         <div class="footer-col">
-          <h6>Instagram / 2GIS / Threads/ Связь</h6>
-          <a href="https://www.instagram.com/salon_goldenclass/">Instagram<br><a href="https://2gis.kz/shymkent/firm/70000001025927083/tab/prices?m=69.602577%2C42.325826%2F15.93">2GIS</a><br><a href="https://www.threads.com/@salon_goldenclass?xmt=AQG0ipf3BgMho_9Y5gpCGwxBOHFBqbdImjVHSm2le6nBT8o">Threads</a><br></p>
+          <h6 style="color: var(--text-muted); font-size: 0.75rem; margin-bottom: 8px;">СОЦСЕТИ</h6>
+          <p style="font-size: 0.9rem;">
+            <a href="https://www.instagram.com/salon_goldenclass/">Instagram</a><br>
+            <a href="https://2gis.kz/shymkent/firm/70000001025927083">2GIS</a><br>
+            <a href="https://www.threads.com/@salon_goldenclass">Threads</a>
+          </p>
         </div>
-        <div class="footer-col" style="text-align: right;">
-          <button class="btn-pink" onclick="openModal()">Записаться онлайн</button>
+        <div class="footer-col">
+          <button class="btn-pink" onclick="openModal()" style="width: 100%;">Записаться</button>
         </div>
       </div>
-      <div class="copyright">
-        <div>© 2026 Golden Class. Все права защищены. Номинант 2ГИС.</div>
-        <div>Оплата: Карты, Наличные, QR-код</div>
+      <div style="font-size: 0.75rem; color: var(--text-muted); border-top: 1px solid rgba(255,255,255,0.05); padding-top: 16px;">
+       
       </div>
     </div>
   </footer>
 
-  <!-- MODAL -->
+ 
   <div class="modal" id="bookingModal">
     <div class="modal-content">
       <button class="close-btn" onclick="closeModal()">×</button>
       <h4>Запись в салон</h4>
-      <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 4px;">Ваш список выбранных услуг будет автоматически отправлен в WhatsApp</p>
+      <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 4px;">Список выбранных услуг будет передан в WhatsApp</p>
       
       <form onsubmit="handleBooking(event)">
         <input type="text" id="clientName" placeholder="Ваше имя" required>
-        
-        <div class="selected-services-box" id="modalServicesBox">
-          <!-- Filled by JS -->
-        </div>
-
-        <button type="submit" class="btn-pink" style="width: 100%; margin-top: 10px;">Перейти в WhatsApp</button>
+        <div class="selected-services-box" id="modalServicesBox"></div>
+        <button type="submit" class="btn-pink" style="width: 100%;">Перейти в WhatsApp</button>
       </form>
     </div>
   </div>
@@ -1005,94 +816,53 @@ a:hover {
         { name: 'Стрижка женская', price: '6.000 - 10.000 ₸' },
         { name: 'Стрижка детская', price: '3.000 - 5.000 ₸' },
         { name: 'Стрижка чёлки', price: '2.000 ₸' },
-        { name: 'Стрижка чёлки детская', price: '1.000 ₸' },
         { name: 'Укладка', price: '5.000 - 8.000 ₸' },
         { name: 'Локоны', price: '5.000 - 10.000 ₸' },
         { name: 'Турецкие локоны', price: '6.000 - 8.000 ₸' },
-        { name: 'Плетение простое', price: '5.000 - 10.000 ₸' },
-        { name: 'Плетение сложное', price: '10.000 - 30.000 ₸' },
-        { name: 'Причёска женская', price: '7.000 - 10.000 ₸' },
-        { name: 'Причёска детская', price: '3.000 - 5.000 ₸' },
-        { name: 'Причёска свадебная', price: '15.000 ₸' }
+        { name: 'Причёска женская', price: '7.000 - 10.000 ₸' }
       ],
       coloring: [
         { name: 'Hyaluron (Италия) в 1 тон', price: '20.000 - 25.000 ₸' },
-        { name: 'Hyaluron (Италия) корни', price: '10.000 - 12.000 ₸' },
-        { name: 'La Biosthetique (Франция) в 1 тон', price: '30.000 - 40.000 ₸' },
-        { name: 'La Biosthetique (Франция) корни', price: '15.000 - 20.000 ₸' },
-        { name: 'Окрашивание краской с собой', price: '6.000 - 8.000 ₸' },
+        { name: 'La Biosthetique в 1 тон', price: '30.000 - 40.000 ₸' },
         { name: 'Сложное окрашивание', price: '50.000 - 80.000 ₸' },
         { name: 'Ботокс волос', price: '20.000 - 30.000 ₸' },
-        { name: 'Кератиновое выпрямление', price: '30.000 - 70.000 ₸' },
-        { name: 'Наноквертизация / Нанопластика', price: '30.000 - 70.000 ₸' },
-        { name: 'SPA уход для волос L\'Oréal', price: 'от 15.000 ₸' }
+        { name: 'Кератиновое выпрямление', price: '30.000 - 70.000 ₸' }
       ],
       nailsTop: [
         { name: 'Маникюр комбинированный (Top)', price: '5.000 ₸' },
-        { name: 'Маникюр с гелевым покрытием (Top)', price: '7.000 ₸' },
-        { name: 'Японский маникюр (Top)', price: '7.000 ₸' },
+        { name: 'Маникюр + гель (Top)', price: '7.000 ₸' },
         { name: 'Наращивание ногтей (Top)', price: '12.000 - 15.000 ₸' },
-        { name: 'Коррекция наращивания (Top)', price: '8.000 - 10.000 ₸' },
-        { name: 'Педикюр классический (Top)', price: '8.000 ₸' },
-        { name: 'Педикюр Smart (Top)', price: '8.000 ₸' },
-        { name: 'Педикюр с гелевым покрытием (Top)', price: '9.000 ₸' },
-        { name: 'Обработка пальчиков / пяток (Top)', price: '4.000 ₸' },
-        { name: 'Мужской маникюр (Top)', price: '6.000 ₸' },
-        { name: 'Мужской педикюр (Top)', price: '8.000 ₸' }
+        { name: 'Педикюр Smart (Top)', price: '8.000 ₸' }
       ],
       nailsVip: [
         { name: 'Маникюр комбинированный (VIP)', price: '5.000 ₸' },
-        { name: 'Маникюр с гелевым покрытием (VIP)', price: '8.000 ₸' },
-        { name: 'Японский маникюр (VIP)', price: '7.000 ₸' },
+        { name: 'Маникюр + гель (VIP)', price: '8.000 ₸' },
         { name: 'Наращивание ногтей (VIP)', price: '13.000 - 15.000 ₸' },
-        { name: 'Коррекция наращивания (VIP)', price: '9.000 - 12.000 ₸' },
-        { name: 'Педикюр классический / Smart (VIP)', price: '8.000 ₸' },
-        { name: 'Педикюр с гелевым покрытием (VIP)', price: '10.000 ₸' },
-        { name: 'Обработка пальчиков / пяток (VIP)', price: '5.000 ₸' },
-        { name: 'Мужской маникюр (VIP)', price: '6.000 ₸' },
-        { name: 'Мужской педикюр (VIP)', price: '8.000 ₸' }
+        { name: 'Педикюр + гель (VIP)', price: '10.000 ₸' }
       ],
       lashes: [
-        { name: 'Наращивание ресниц классика', price: '7.000 ₸' },
-        { name: 'Наращивание ресниц объем 2-3 D', price: '8.000 ₸' },
-        { name: 'Наращивание ресниц объем 4-10 D', price: '9.000 ₸' },
-        { name: 'Эффекты: лисий, мокрый, лучики', price: '7.000 - 10.000 ₸' },
-        { name: 'Коричневые ресницы', price: '10.000 ₸' },
-        { name: 'Коррекция ресниц', price: '5.000 ₸' },
-        { name: 'Снятие ресниц', price: '2.000 ₸' },
-        { name: 'Ламинирование ресниц', price: '10.000 ₸' },
-        { name: 'Ламинирование бровей', price: '8.000 ₸' }
+        { name: 'Ресницы классика', price: '7.000 ₸' },
+        { name: 'Ресницы 2D-3D', price: '8.000 ₸' },
+        { name: 'Ресницы 4D-10D', price: '9.000 ₸' },
+        { name: 'Ламинирование ресниц', price: '10.000 ₸' }
       ],
       brows: [
         { name: 'Ламинирование бровей', price: '8.000 ₸' },
-        { name: 'СПА бровей', price: '5.000 ₸' },
         { name: 'Архитектура бровей', price: '4.000 ₸' },
         { name: 'Коррекция бровей', price: '2.000 ₸' },
-        { name: 'Окрашивание краской / хной', price: '2.000 - 3.000 ₸' },
-        { name: 'Мусульманская коррекция', price: '3.000 ₸' },
-        { name: 'Чистка лица нитью', price: '4.000 ₸' }
+        { name: 'Окрашивание хной/краской', price: '2.000 - 3.000 ₸' }
       ],
       depilation: [
-        { name: 'Депиляция: Усики', price: '1.000 - 1.500 ₸' },
-        { name: 'Депиляция: Подмышки', price: '2.000 - 3.000 ₸' },
-        { name: 'Депиляция: Лицо', price: '5.000 - 7.000 ₸' },
-        { name: 'Депиляция: Руки до локтей', price: '4.000 - 6.000 ₸' },
-        { name: 'Депиляция: Руки полностью', price: '5.000 - 7.000 ₸' },
-        { name: 'Депиляция: Ноги до колен', price: '4.000 - 6.000 ₸' },
-        { name: 'Депиляция: Ноги полностью', price: '5.000 - 7.000 ₸' },
-        { name: 'Депиляция: Бикини', price: '5.000 - 7.000 ₸' },
-        { name: 'Депиляция: Живот', price: '3.000 - 7.000 ₸' },
-        { name: 'Депиляция: Спина', price: '4.000 - 12.000 ₸' }
+        { name: 'Усики', price: '1.000 ₸' },
+        { name: 'Подмышки', price: '2.000 ₸' },
+        { name: 'Ноги полностью', price: '5.000 - 7.000 ₸' },
+        { name: 'Бикини', price: '5.000 - 7.000 ₸' }
       ],
       makeup: [
-        { name: 'Дневной макияж без ресниц', price: '10.000 ₸' },
-        { name: 'Вечерний макияж с ресницами', price: '12.000 ₸' },
+        { name: 'Дневной макияж', price: '10.000 ₸' },
+        { name: 'Вечерний макияж', price: '12.000 ₸' },
         { name: 'Свадебный макияж', price: '20.000 ₸' },
-        { name: 'Накладные ресницы', price: '4.000 ₸' },
-        { name: 'Причёска на выезд', price: '15.000 ₸' },
-        { name: 'Свадебная причёска на выезд', price: '20.000 ₸' },
-        { name: 'Макияж на выезд', price: '18.000 ₸' },
-        { name: 'Свадебный макияж на выезд', price: '25.000 ₸' }
+        { name: 'Макияж на выезд', price: '18.000 ₸' }
       ]
     };
 
@@ -1136,10 +906,8 @@ a:hover {
     }
 
     function updateCartUI() {
-      const countEl = document.getElementById('cartCount');
+      document.getElementById('cartCount').innerText = selectedServices.length;
       const cartBar = document.getElementById('cartBar');
-      
-      countEl.innerText = selectedServices.length;
       if (selectedServices.length > 0) {
         cartBar.classList.add('active');
       } else {
@@ -1156,10 +924,10 @@ a:hover {
     function openModal() {
       const box = document.getElementById('modalServicesBox');
       if (selectedServices.length === 0) {
-        box.innerHTML = '<p style="color:var(--text-muted); font-size:0.85rem; text-align:center;">Услуги не выбраны. Вы можете написать свои пожелания в сообщении.</p>';
+        box.innerHTML = '<p style="color:var(--text-muted); font-size:0.8rem; text-align:center;">Услуги не выбраны.</p>';
       } else {
         box.innerHTML = selectedServices.map((s, idx) => `
-          <div class="selected-service-chip">
+          <div style="display:flex; justify-content:space-between; font-size:0.8rem; padding:4px 0;">
             <span>${idx + 1}. ${s.name}</span>
             <span style="color:var(--accent-pink); font-weight:700;">${s.price}</span>
           </div>
@@ -1175,7 +943,6 @@ a:hover {
     function handleBooking(e) {
       e.preventDefault();
       const name = document.getElementById('clientName').value;
-      
       let message = `Здравствуйте! Меня зовут ${name}.\n`;
       if (selectedServices.length > 0) {
         message += `Хочу записаться на следующие услуги:\n`;
@@ -1185,13 +952,10 @@ a:hover {
       } else {
         message += `Хочу записаться на консультацию / процедуру в салоне Golden Class.`;
       }
-
-      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-      window.open(url, '_blank');
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
       closeModal();
     }
 
-    // Init default price tab
     renderPrices('hair');
   </script>
 </body>
